@@ -12,7 +12,7 @@ repeat
     makefolder("dingo.lol")
  end
  
- local menu = game:GetObjects("rbxassetid://17858807892")[1] 
+ local menu = game:GetObjects("rbxassetid://17858840407")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  
