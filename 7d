@@ -12,7 +12,7 @@ repeat
     makefolder("dingo.lol")
  end
  
- local menu = game:GetObjects("rbxassetid://17858840407")[1] 
+ local menu = game:GetObjects("rbxassetid://17858898099")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  
@@ -289,7 +289,7 @@ repeat
  end
  
  local library = {
-    Title = 'dingo.<font color="rgb(107, 100, 100)">lol</font>',
+    Title = 'dingo.<font color="rgb(255, 5, 9)">lol</font>',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
