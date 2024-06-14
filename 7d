@@ -1,6 +1,6 @@
------- * dingo.lol priv_9 Menu * ------
+------ * debugged.lol priv_9 Menu * ------
 --[[
-    # Rewriten by: dingo.lol
+    # Rewriten by: debugged.lol
 ]]
 
 repeat
@@ -8,11 +8,11 @@ repeat
  until game:IsLoaded()
  
  -- Menu/UI Creation
- if not isfile("dingo.lol") then
-    makefolder("dingo.lol")
+ if not isfile("debugged.lol") then
+    makefolder("debugged.lol")
  end
  
- local menu = game:GetObjects("rbxassetid://17858898099")[1] 
+ local menu = game:GetObjects("rbxassetid://17859011406")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  
@@ -282,14 +282,14 @@ repeat
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
          local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'dingo.lol.<font color="rgb(255, 5, 9)">prod</font> - uid: <font color="rgb(255, 5, 9)">' .. uid .. '</font> / fps: <font color="rgb(255, 5, 9)">' .. fpsValue .. '</font> / ping: <font color="rgb(255, 5, 9)">' .. ping .. '</font> / time: <font color="rgb(255, 5, 9)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'debugged.lol.<font color="rgb(255, 5, 9)">prod</font> - uid: <font color="rgb(255, 5, 9)">' .. uid .. '</font> / fps: <font color="rgb(255, 5, 9)">' .. fpsValue .. '</font> / ping: <font color="rgb(255, 5, 9)">' .. ping .. '</font> / time: <font color="rgb(255, 5, 9)">' .. time .. '</font>'
        end
     end)
     return Watermark
  end
  
  local library = {
-    Title = 'dingo.<font color="rgb(255, 5, 9)">lol</font>',
+    Title = 'debugged.<font color="rgb(255, 5, 9)">lol</font>',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
@@ -341,13 +341,13 @@ repeat
     
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
-    menu.Name = "dingo.lol_gui"
+    menu.Name = "debugged.lol_gui"
     local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
     local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
     ProtectGui(CloneScreenGui)   
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
-    CloneScreenGui.Name = "dingo.lol_gui"
+    CloneScreenGui.Name = "debugged.lol_gui"
  
     local menu_text_label = Instance.new("TextLabel", menu.bg)
     menu_text_label.Name = "pre"
@@ -2275,7 +2275,7 @@ repeat
                             if v == x then return true end
                             end return false end
                             function library:createConfig()
-                                makefolder("dingo.lol")
+                                makefolder("debugged.lol")
                                 local name = library.flags["config_name"]
                                 if contains(library.options["config_box"].values, name) then return library:Notify(name..".cfg already exists!", 5) end
                                 if name == "" then return library:Notify("You need to put a name in!", 5) end
@@ -2287,14 +2287,14 @@ repeat
                                 else jig[i] = v
                                 end
                             end
-                            writefile("dingo.lol/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+                            writefile("debugged.lol/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
                             library:Notify("Succesfully created config "..name..".cfg!", 5)
                             library:refreshConfigs()
                         end
  
                         function library:saveConfig()
                             pcall(function()
-                                makefolder("dingo.lol")
+                                makefolder("debugged.lol")
                                 local name = library.flags["config_box"]
                                 if not name then
                                     return
@@ -2358,7 +2358,7 @@ repeat
  
                 function library:refreshConfigs()
                     local tbl = {}
-                    for i,v in next, listfiles("dingo.lol") do table.insert(tbl,v) end
+                    for i,v in next, listfiles("debugged.lol") do table.insert(tbl,v) end
                     library.options["config_box"].refresh(tbl)
                 end      
             end)()                         
